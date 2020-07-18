@@ -30,7 +30,7 @@ function HeaderContent(header, date, title, temp) {
     headerDiv.appendChild(headerTitle)
     headerDiv.appendChild(headerTemp)
 
-    return header
+    return headerDiv
 }
 
 const headerComponent = HeaderContent('header text', 'date text', 'title text', 'temp text')
