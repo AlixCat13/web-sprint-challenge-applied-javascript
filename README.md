@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+    The DOM (or Document Object Model) allows us to interact with and manipulate a webpage by allowing us to change document structure, content and styling. It is an object representation of the html elements of a webpage 
+
 2. What is an event?
+
+    An event is something that happens when the user interacts with the webpage.
 
 3. What is an event listener?
 
+    A callback that is fired when an event happens. 
+
 4. Why would we convert a NodeList into an Array?
 
+    So we can manipulate the data set in the array
+
 5. What is a component?
+
+    Components are the building blocks to modern application development and is made up of HTML, CSS and Javascript
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
