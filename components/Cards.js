@@ -58,4 +58,5 @@ const cardFunction = (data) => {
 }
 
 const cardComponent = document.querySelector('.cards-container')
+cardComponent.appendChild(cardFunction)
 
