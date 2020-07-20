@@ -10,7 +10,7 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
-// import axios from 'axios'
+import axios from 'axios'
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(successResponse => {
@@ -34,6 +34,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
     const topics = document.querySelector('.topics')
 
-    data.topics.forEach(topics => {
-        topics.appendChild(newsfeedTab(data.topics[0], data.topics[1], data.topics[2], data.topics[3], data.topics[4]))
+    topics.forEach(topics => {
+        topics.appendChild(newsfeedTab(topics[0], topics[1], topics[2], topics[3], topics[4]))
     })
