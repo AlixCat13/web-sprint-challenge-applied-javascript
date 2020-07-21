@@ -21,10 +21,10 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-const { default: Axios } = require("axios")
+import axios from 'axios'
 
 
-Axios.get('https://lambda-times-backend.herokuapp.com/articles')
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
 const cardFunction = (data) => {
     const card = document.createElement('div')
@@ -53,10 +53,19 @@ const cardFunction = (data) => {
     imgCont.appendChild(img)
     card.appendChild(name)
 
-    return card 
+    card.addEventListener('click', () => {
+        console.log(headline)
+    })
+
+    return card;
 
 }
 
+const cardContent = cardFunction(data.articles)
 const cardComponent = document.querySelector('.cards-container')
-cardComponent.appendChild(cardFunction)
+cardComponent.appendChild(cardContent)
+
+
+
+
 

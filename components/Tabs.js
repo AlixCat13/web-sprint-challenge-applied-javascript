@@ -25,15 +25,29 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     })
 
     const newsfeedTab = (tab) => {
-        let newTab = document.createElement('div')
-        newTab.textContent = tab
-        newTab.classList.add('tab')
+        let newTab1 = document.createElement('div')
+        let newTab2 = document.createElement('div')
+        let newTab3 = document.createElement('div')
+        let newTab4 = document.createElement('div')
+        let newTab5 = document.createElement('div')
 
-        return newTab
+        newTab1.textContent = tab
+        newTab2.textContent = tab
+        newTab3.textContent = tab
+        newTab4.textContent = tab
+        newTab5.textContent = tab
+
+        newTab1.classList.add('tab')
+        newTab2.classList.add('tab')
+        newTab3.classList.add('tab')
+        newTab4.classList.add('tab')
+        newTab5.classList.add('tab')
+
+        return newsfeedTab;
     }
 
     const topics = document.querySelector('.topics')
 
-    topics.forEach(topics => {
+    data.topics.forEach(topics => {
         topics.appendChild(newsfeedTab(topics[0], topics[1], topics[2], topics[3], topics[4]))
     })
