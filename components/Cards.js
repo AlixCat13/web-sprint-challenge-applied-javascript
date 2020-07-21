@@ -26,22 +26,22 @@ import axios from 'axios'
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
-const cardFunction = (data) => {
-    const card = document.createElement('div')
+const cardFunction = (card) => {
+    const cards = document.createElement('div')
     const headline = document.createElement('div')
     const author = document.createElement('div')
     const imgCont = document.createElement('div')
     const img = document.createElement('img')
     const name = document.createElement('span')
 
-    card.textContent = card
+    cards.textContent = card
     headline.textContent = headline
     author.textContent = author
     imgCont.textContent = img
-    img.setAttribute('src', imgsrc)
+    img.setAttribute('src', img.src)
     name.textContent = name
 
-    card.classList.add('card')
+    cards.classList.add('card')
     headline.classList.add('headline')
     author.classList.add('author')
     imgCont.classList.add('img-container')
@@ -61,7 +61,7 @@ const cardFunction = (data) => {
 
 }
 
-const cardContent = cardFunction(data.articles)
+const cardContent = cardFunction(Object.data.articles)
 const cardComponent = document.querySelector('.cards-container')
 cardComponent.appendChild(cardContent)
 
