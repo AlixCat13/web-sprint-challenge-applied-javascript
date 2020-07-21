@@ -46,8 +46,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
         return newsfeedTab;
     }
 
-    const topics = document.querySelector('.topics')
+    const tabs = document.querySelector('.topics')
 
     Object.data.topics.forEach(topics => {
-        topics.appendChild(newsfeedTab(Object.data.topics[0], Object.data.topics[1], Object.data.topics[2], Object.data.topics[3], Object.data.topics[4]))
+        tabs.appendChild(topics)
     })
