@@ -26,6 +26,14 @@ import axios from 'axios'
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
+.then(successResponse => {
+    console.log(successResponse)
+})
+
+.catch(errorResponse => {
+    console.log(errorResponse)
+})
+
 const cardFunction = (card) => {
     const cards = document.createElement('div')
     const headline = document.createElement('div')
@@ -34,7 +42,7 @@ const cardFunction = (card) => {
     const img = document.createElement('img')
     const name = document.createElement('span')
 
-    cards.textContent = card
+    cards.textContent = cards
     headline.textContent = headline
     author.textContent = author
     imgCont.textContent = img
