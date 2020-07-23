@@ -64,11 +64,10 @@ const cardFunction = (content) => {
     cards.appendChild(author)
     author.appendChild(imgCont)
     imgCont.appendChild(img)
-    cards.appendChild(name)
-    
+    cards.appendChild(name)    
 
     cards.addEventListener('click', () => {
-        console.log(headline)
+        console.log(content.headline)
     })
 
     return cards;
