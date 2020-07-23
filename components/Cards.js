@@ -27,51 +27,51 @@ import axios from 'axios'
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
 .then(successResponse => {
-    console.log(successResponse)
+    console.log(successResponse.data.articles)
 })
 
 .catch(errorResponse => {
     console.log(errorResponse)
 })
 
-const cardFunction = (card) => {
+const cardFunction = (data) => {
     const cards = document.createElement('div')
     const headline = document.createElement('div')
     const author = document.createElement('div')
-    const imgCont = document.createElement('div')
+    // const imgCont = document.createElement('div')
     const img = document.createElement('img')
     const name = document.createElement('span')
 
-    cards.textContent = cards
-    headline.textContent = headline
-    author.textContent = author
-    imgCont.textContent = img
-    img.setAttribute('src', img.src)
+    cards.textContent = data.articles
+    headline.textContent = data.headline
+    author.textContent = data.authorName
+    // imgCont.textContent = img
+    img.src = data.authorPhoto
     name.textContent = name
 
     cards.classList.add('card')
     headline.classList.add('headline')
     author.classList.add('author')
-    imgCont.classList.add('img-container')
+    // imgCont.classList.add('img-container')
 
 
-    card.appendChild(headline)
-    card.appendChild(author)
-    author.appendChild(imgCont)
-    imgCont.appendChild(img)
-    card.appendChild(name)
+    cards.appendChild(headline)
+    cards.appendChild(author)
+    author.appendChild(img)
+    // imgCont.appendChild(img)
+    author.appendChild(name)
 
-    card.addEventListener('click', () => {
+    cards.addEventListener('click', () => {
         console.log(headline)
     })
 
-    return card;
+    return cards;
 
 }
 
-const cardContent = cardFunction(Object.data.articles)
+const cardContent = cardFunction(data.articles)
 const cardComponent = document.querySelector('.cards-container')
-cardComponent.appendChild(cardContent)
+cardContent.appendChild(cardComponent)
 
 
 

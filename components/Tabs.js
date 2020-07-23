@@ -14,40 +14,46 @@ import axios from 'axios'
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(successResponse => {
-        console.log(successResponse)
-        Object.data.forEach(tab => {
-            const tab1 = newsfeedTab(tab)
-            topics.appendChild(tab1)
-        })
+        console.log(successResponse) 
+        const newTab = topicMaker(successResponse.data.topics)  
+        tabs.appendChild(newTab)     
     })
+
     .catch(errorResponse => {
-        console.log(errorResponse)
+        console.log('Error!',errorResponse)
     })
 
-    const newsfeedTab = () => {
-        let newTab1 = document.createElement('div')
-        let newTab2 = document.createElement('div')
-        let newTab3 = document.createElement('div')
-        let newTab4 = document.createElement('div')
-        let newTab5 = document.createElement('div')
+    const topicMaker = (content) => {
 
-        newTab1.textContent = Object.data.topic[0]
-        newTab2.textContent = Object.data.topic[1]
-        newTab3.textContent = Object.data.topic[2]
-        newTab4.textContent = Object.data.topic[3]
-        newTab5.textContent = Object.data.topic[4]
+        console.log(content)
 
-        newTab1.classList.add('tab')
-        newTab2.classList.add('tab')
-        newTab3.classList.add('tab')
-        newTab4.classList.add('tab')
-        newTab5.classList.add('tab')
+        let Tab = document.createElement('div')
+        // let newTab2 = document.createElement('div')
+        // let newTab3 = document.createElement('div')
+        // let newTab4 = document.createElement('div')
+        // let newTab5 = document.createElement('div')
 
-        return newsfeedTab;
+        Tab.textContent = 'text text';
+        // newTab2.textContent = data[2];
+        // newTab3.textContent = data[3];
+        // newTab4.textContent = data[4];
+        // newTab5.textContent = data[5];
+
+        Tab.classList.add('tab')
+        // newTab2.classList.add('tab')
+        // newTab3.classList.add('tab')
+        // newTab4.classList.add('tab')
+        // newTab5.classList.add('tab')
+
+        Tab.appendChild(content)
+
+        return Tab;
     }
 
     const tabs = document.querySelector('.topics')
 
-    Object.data.topics.forEach(topics => {
-        tabs.appendChild(topics)
-    })
+    // const cardTabs = data
+
+    //  data.forEach(topics => {
+    //     tabs.appendChild(topics)
+    // })
