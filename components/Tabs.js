@@ -15,8 +15,7 @@ import axios from 'axios'
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(successResponse => {
         console.log(successResponse)
-       
-        
+               
         successResponse.data.topics.forEach(topic => {
             const newTab = topicMaker(topic)
             topics.appendChild(newTab)  
@@ -28,8 +27,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     })
 
     const topicMaker = (content) => {
-
-        console.log(content)
 
         let topics = document.createElement('div')
         let Tab1 = document.createElement('div')
