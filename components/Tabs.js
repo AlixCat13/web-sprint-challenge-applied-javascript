@@ -14,9 +14,13 @@ import axios from 'axios'
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(successResponse => {
-        console.log(successResponse) 
-        const newTab = topicMaker(successResponse.data.topics)  
-        tabs.appendChild(newTab)     
+        console.log(successResponse)
+       
+        
+        successResponse.data.topics.forEach(topic => {
+            const newTab = topicMaker(topic)
+            topics.appendChild(newTab)  
+        })
     })
 
     .catch(errorResponse => {
@@ -27,33 +31,17 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
         console.log(content)
 
-        let Tab = document.createElement('div')
-        // let newTab2 = document.createElement('div')
-        // let newTab3 = document.createElement('div')
-        // let newTab4 = document.createElement('div')
-        // let newTab5 = document.createElement('div')
+        let topics = document.createElement('div')
+        let Tab1 = document.createElement('div')
 
-        Tab.textContent = 'text text';
-        // newTab2.textContent = data[2];
-        // newTab3.textContent = data[3];
-        // newTab4.textContent = data[4];
-        // newTab5.textContent = data[5];
+        Tab1.textContent = content;    
 
-        Tab.classList.add('tab')
-        // newTab2.classList.add('tab')
-        // newTab3.classList.add('tab')
-        // newTab4.classList.add('tab')
-        // newTab5.classList.add('tab')
+        Tab1.classList.add('tab') 
 
-        Tab.appendChild(content)
+        Tab1.appendChild(topics)    
 
-        return Tab;
+
+        return Tab1;
     }
 
-    const tabs = document.querySelector('.topics')
-
-    // const cardTabs = data
-
-    //  data.forEach(topics => {
-    //     tabs.appendChild(topics)
-    // })
+    const topics = document.querySelector('.topics')
